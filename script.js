@@ -9,9 +9,23 @@ document.getElementById("corazon").onclick = () => {
     sobre.classList.remove("oculto");
 }
 
+// Configuración para la animación de escritura
 document.getElementById("envelope").onclick = () => {
     sobre.classList.add("oculto");
     carta.classList.remove("oculto");
+
+    // Iniciamos la animación de escritura
+    fetch('mensaje.txt')
+        .then(response => response.text())
+        .then(text => {
+            new Typewriter('#carta p', {
+                strings: text,
+                autoStart: true,
+                cursor: '|', // El cursor que se va escribiendo (como una pluma)
+                delay: 50,    // Velocidad de escritura (ms por carácter)
+                deleteSpeed: 1 // Velocidad de borrado (por si quisiéramos)
+            });
+        });
 }
 
 document.getElementById("continuar").onclick = () => {
@@ -52,4 +66,4 @@ musicaBtn.addEventListener("click", () => {
         musica.pause();
         musicaBtn.innerHTML="🎶 Tocame antes de abrir el sobre ❤️";
     }
-}); // <-- Acá faltaba cerrar esto para que no tire error
+});
