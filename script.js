@@ -22,50 +22,34 @@ document.getElementById("continuar").onclick = () => {
 document.getElementById("acepto").onclick = () => {
     foto.classList.add("oculto");
     final.classList.remove("oculto");
-
     lluviaCorazones();
 }
 
 function lluviaCorazones(){
-
     for(let i=0;i<120;i++){
-
         const corazon=document.createElement("div");
-
         corazon.innerHTML="❤️";
-
         corazon.className="petalo";
-
         corazon.style.left=Math.random()*100+"vw";
-
         corazon.style.animationDuration=(Math.random()*3+3)+"s";
-
         corazon.style.fontSize=(20+Math.random()*20)+"px";
-
         document.getElementById("petalos").appendChild(corazon);
 
         setTimeout(()=>{
             corazon.remove();
         },6000);
-
     }
-
 }
+
 const musica = document.getElementById("musica");
 const musicaBtn = document.getElementById("musicaBtn");
 
 musicaBtn.addEventListener("click", () => {
-
     if(musica.paused){
-
         musica.play();
-
         musicaBtn.innerHTML="⏸️ Pausar música";
-
     }else{
-
         musica.pause();
-
         musicaBtn.innerHTML="🎶 Tocame antes de abrir el sobre ❤️";
-
     }
+}); // <-- Acá faltaba cerrar esto para que no tire error
