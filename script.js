@@ -1,42 +1,57 @@
 const inicio = document.getElementById("inicio");
-const sobre = document.getElementById("sobre");
-const carta = document.getElementById("carta");
-const foto = document.getElementById("foto");
-const final = document.getElementById("final");
+const sobre = document.querySelector('[identificación="sobre"]');
+const carta = document.querySelector('[identificación="carta"]');
+const foto = document.querySelector('[identificación="foto"]');
+const final = document.querySelector('[identificación="final"]');
 
-document.getElementById("corazon").onclick = () => {
-    inicio.classList.add("oculto");
-    sobre.classList.remove("oculto");
+// Primer paso: clic al corazón
+const corazonBtn = document.getElementById("corazon");
+if(corazonBtn){
+    corazonBtn.onclick = () => {
+        if(inicio) inicio.classList.add("oculto");
+        if(sobre) sobre.classList.remove("oculto");
+    }
 }
 
-// Configuración para la animación de escritura
-document.getElementById("envelope").onclick = () => {
-    sobre.classList.add("oculto");
-    carta.classList.remove("oculto");
+// Segundo paso: clic al sobre e inicia la animación
+const sobreBtn = document.querySelector('[identificación="sobre"] div');
+if(sobreBtn){
+    sobreBtn.onclick = () => {
+        if(sobre) sobre.classList.add("oculto");
+        if(carta) carta.classList.remove("oculto");
 
-    // Iniciamos la animación de escritura
-    fetch('mensaje.txt')
-        .then(response => response.text())
-        .then(text => {
-            new Typewriter('#carta p', {
-                strings: text,
-                autoStart: true,
-                cursor: '|', // El cursor que se va escribiendo (como una pluma)
-                delay: 50,    // Velocidad de escritura (ms por carácter)
-                deleteSpeed: 1 // Velocidad de borrado (por si quisiéramos)
-            });
-        });
+        // Iniciamos la animación de escritura dentro de <pag>
+        fetch('mensaje.txt')
+            .then(response => response.text())
+            .then(text => {
+                new Typewriter('#carta pag', {
+                    strings: text,
+                    autoStart: true,
+                    cursor: '|', 
+                    delay: 50
+                });
+            })
+            .catch(err => console.error("Error cargando mensaje.txt:", err));
+    }
 }
 
-document.getElementById("continuar").onclick = () => {
-    carta.classList.add("oculto");
-    foto.classList.remove("oculto");
+// Tercer paso: clic en continuar
+const continuarBtn = document.querySelector('[identificación="continuar"]');
+if(continuarBtn){
+    continuarBtn.onclick = () => {
+        if(carta) carta.classList.add("oculto");
+        if(foto) foto.classList.remove("oculto");
+    }
 }
 
-document.getElementById("acepto").onclick = () => {
-    foto.classList.add("oculto");
-    final.classList.remove("oculto");
-    lluviaCorazones();
+// Cuarto paso: clic en acepto
+const aceptoBtn = document.getElementById("acepto");
+if(aceptoBtn){
+    aceptoBtn.onclick = () => {
+        if(foto) foto.classList.add("oculto");
+        if(final) final.classList.remove("oculto");
+        lluviaCorazones();
+    }
 }
 
 function lluviaCorazones(){
@@ -47,7 +62,8 @@ function lluviaCorazones(){
         corazon.style.left=Math.random()*100+"vw";
         corazon.style.animationDuration=(Math.random()*3+3)+"s";
         corazon.style.fontSize=(20+Math.random()*20)+"px";
-        document.getElementById("petalos").appendChild(corazon);
+        const contenedor = document.getElementById("petalos");
+        if(contenedor) contenedor.appendChild(corazon);
 
         setTimeout(()=>{
             corazon.remove();
@@ -58,12 +74,14 @@ function lluviaCorazones(){
 const musica = document.getElementById("musica");
 const musicaBtn = document.getElementById("musicaBtn");
 
-musicaBtn.addEventListener("click", () => {
-    if(musica.paused){
-        musica.play();
-        musicaBtn.innerHTML="⏸️ Pausar música";
-    }else{
-        musica.pause();
-        musicaBtn.innerHTML="🎶 Tocame antes de abrir el sobre ❤️";
-    }
-});
+if(musicaBtn && musica){
+    musicaBtn.addEventListener("click", () => {
+        if(musica.paused){
+            musica.play();
+            musicaBtn.innerHTML="⏸️ Pausar música";
+        }else{
+            musica.pause();
+            musicaBtn.innerHTML="🎶 Tocame antes de abrir el sobre ❤️";
+        }
+    });
+}
