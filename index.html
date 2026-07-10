@@ -4,161 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Una sorpresa para vos ❤️</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2=family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div id="petalos"></div>
 
-<section id="inicio">
-
-    <h1>Tengo una sorpresa para vos...</h1>
-
-    <div id="corazon">
-        ❤️
-    </div>
-
-    <p>
-Primero tocá la música...<br><br>
-Después descubrí la sorpresa que preparé para vos ❤️
-</p>
-
-</section>
-
-<section id="sobre" class="oculto">
-
-    <div id="envelope">
-        <div class="tapa"></div>
-        <div class="carta"></div>
-    </div>
-
-    <p>Tocá el sobre para abrirlo ❤️</p>
-
-</section>
-
-<section id="carta" class="oculto">
-
-<div class="papel">
-
-<h2>💌 Para Caramelito ❤️</h2>
-
-<p>
-
-Caramelito:
-
-<br><br>
-
-Hay personas que hacen que un día cualquiera se convierta en un recuerdo inolvidable...
-
-<br><br>
-
-Y vos sos esa persona para mí.
-
-<br><br>
-
-Por eso quiero invitarte a compartir una noche especial, donde solo existamos vos y yo.
-
-<br><br>
-
-Una cena preparada con mucho cariño, risas, miradas, abrazos y todo el amor que siento por vos.
-
-<br><br>
-
-<b>¿Me regalás el placer de acompañarme esta noche, viernes 10 de julio, a una cena romántica en casa?</b>
-
-<br><br>
-
-Prometo poner todo mi corazón para que sea una noche que recordemos siempre.
-
-<br><br>
-
-Con muchísimo amor...
-
-<br><br>
-
-<b>Tu Caramelito ❤️</b>
-
-</p>
-
-<button id="continuar">
-Antes de responder...
-</button>
-
-</div>
-
-</section>
-
-<section id="foto" class="oculto">
-
-<h2>❤️</h2>
-
-<img src="nosotros.jpg" alt="Nosotros">
-
-<p>
-
-Gracias por hacer tan felices mis días.
-
-<br><br>
-
-Gracias por cada abrazo, cada risa y cada momento juntos.
-
-<br><br>
-
-Esta noche quiero regalarte un pequeño recuerdo de lo mucho que significás para mí.
-
-<br><br>
-
-<b>Te amo muchísimo.</b>
-
-</p>
-
-<button id="acepto">
-
-❤️ Sí, acepto la invitación ❤️
-
-</button>
-
-</section>
-
-<section id="final" class="oculto">
-
-<h1>
-
-¡Sabía que dirías que sí!
-
-❤️
-
-</h1>
-
-<p>
-
-Ya estoy contando los minutos para tenerte conmigo.
-
-<br><br>
-
-Nos vemos esta noche.
-
-<br><br>
-
-<b>Te amo, Caramelito ❤️</b>
-
-</p>
-
-<img src="nosotros.jpg">
-
-</section>
-
-<script src="script.js"></script>
-
-</body>
+<!-- El botón y el audio ahora están acá adentro, donde corresponde -->
 <audio id="musica" loop>
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <button id="musicaBtn" class="music-btn">
-🎶 Tocame antes de abrir el sobre ❤️
+    🎶 Tocame antes de abrir el sobre ❤️
 </button>
+
+<section id="inicio">
+    <h1>Tengo una sorpresa para vos...</h1>
+    <div id="corazon">❤️</div>
+    <p>
+        Primero tocá la música...<br><br>
+        Después descubrí la sorpresa que preparé para vos ❤️
+    </p>
+</section>
+
+<section id="sobre" class="oculto">
+    <div id="envelope">
+        <div class="tapa"></div>
+        <div class="carta"></div>
+    </div>
+    <p>Tocá el sobre para abrirlo ❤️</p>
+</section>
+
+<section id="carta" class="oculto">
+    <div class="papel">
+        <h2>💌 Para Caramelito ❤️</h2>
+        <p>
+            Caramelito:<br><br>
+            Hay personas que hacen que un día cualquiera se convierta en un recuerdo inolvidable...<br><br>
+            Y vos sos esa persona para mí.<br><br>
+            Por eso quiero invitarte a compartir una noche especial, donde solo existamos vos y yo.<br><br>
+            Una cena preparada con mucho cariño, risas, miradas, abrazos y todo el amor que siento por vos.<br><br>
+            <b>¿Me regalás el placer de acompañarme esta noche, viernes 10 de julio, a una cena romántica en casa?</b><br><br>
+            Prometo poner todo mi corazón para que sea una noche que recordemos siempre.<br><br>
+            Con muchísimo amor...<br><br>
+            <b>Tu Caramelito ❤️</b>
+        </p>
+        <button id="continuar">Antes de responder...</button>
+    </div>
+</section>
+
+<section id="foto" class="oculto">
+    <h2>❤️</h2>
+    <img src="nosotros.jpg" alt="Nosotros">
+    <p>
+        Gracias por hacer tan felices mis días.<br><br>
+        Gracias por cada abrazo, cada risa y cada momento juntos.<br><br>
+        Esta noche quiero regalarte un pequeño recuerdo de lo mucho que significás para mí.<br><br>
+        <b>Te amo muchísimo.</b>
+    </p>
+    <button id="acepto">❤️ Sí, acepto la invitación ❤️</button>
+</section>
+
+<section id="final" class="oculto">
+    <h1>¡Sabía que dirías que sí! ❤️</h1>
+    <p>
+        Ya estoy contando los minutos para tenerte conmigo.<br><br>
+        Nos vemos esta noche.<br><br>
+        <b>Te amo, Caramelito ❤️</b>
+    </p>
+    <img src="nosotros.jpg">
+</section>
+
+<script src="script.js"></script>
+
+</body>
 </html>
