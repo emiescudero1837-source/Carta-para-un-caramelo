@@ -1,0 +1,330 @@
+/* ===== CONFIGURACIÓN GENERAL ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:linear-gradient(#180000,#2b0000,#090909);
+    color:white;
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/* ===== FONDO ===== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-image:
+radial-gradient(white 1px, transparent 1px);
+
+background-size:60px 60px;
+
+opacity:.12;
+
+pointer-events:none;
+
+}
+
+/* ===== SECCIONES ===== */
+
+section{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+text-align:center;
+
+transition:1s;
+
+}
+
+.oculto{
+
+display:none;
+
+}
+
+/* ===== TITULOS ===== */
+
+h1,h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:55px;
+
+color:#ffd9d9;
+
+margin-bottom:25px;
+
+text-shadow:0 0 20px #ff4b6e;
+
+}
+
+p{
+
+max-width:700px;
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+/* ===== CORAZON ===== */
+
+#corazon{
+
+font-size:90px;
+
+cursor:pointer;
+
+animation:latido 1s infinite;
+
+}
+
+@keyframes latido{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+
+}
+
+/* ===== SOBRE ===== */
+
+#envelope{
+
+width:300px;
+
+height:200px;
+
+background:#b81f3f;
+
+position:relative;
+
+border-radius:8px;
+
+cursor:pointer;
+
+box-shadow:0 15px 30px rgba(0,0,0,.5);
+
+}
+
+.tapa{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:#d63357;
+
+clip-path:polygon(0 0,100% 0,50% 55%);
+
+transition:1s;
+
+transform-origin:top;
+
+}
+
+#envelope:hover .tapa{
+
+transform:rotateX(180deg);
+
+}
+
+/* ===== CARTA ===== */
+
+.papel{
+
+background:#fffdf7;
+
+color:#333;
+
+padding:40px;
+
+border-radius:20px;
+
+max-width:850px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.5);
+
+}
+
+.papel h2{
+
+color:#c92b53;
+
+text-shadow:none;
+
+}
+
+/* ===== FOTO ===== */
+
+img{
+
+width:320px;
+
+border-radius:20px;
+
+margin:30px;
+
+border:6px solid white;
+
+box-shadow:0 0 30px rgba(255,255,255,.35);
+
+}
+
+/* ===== BOTONES ===== */
+
+button{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:40px;
+
+font-size:20px;
+
+cursor:pointer;
+
+margin-top:30px;
+
+background:#d81b60;
+
+color:white;
+
+transition:.4s;
+
+box-shadow:0 0 25px rgba(255,20,100,.5);
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+background:#ff3f83;
+
+}
+
+/* ===== PETALOS ===== */
+
+#petalos{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.petalo{
+
+position:absolute;
+
+top:-50px;
+
+font-size:22px;
+
+animation:caer linear forwards;
+
+}
+
+@keyframes caer{
+
+to{
+
+transform:
+translateY(110vh)
+rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:700px){
+
+h1,h2{
+
+font-size:40px;
+
+}
+
+p{
+
+font-size:18px;
+
+}
+
+img{
+
+width:90%;
+
+}
+
+button{
+
+width:90%;
+
+}
+
+}
+.music-btn{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+z-index:999;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+background:#b71c4b;
+
+color:white;
+
+font-size:16px;
+
+box-shadow:0 0 20px rgba(255,0,100,.4);
+
+}
